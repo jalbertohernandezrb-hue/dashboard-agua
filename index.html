@@ -14,7 +14,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(56,189,248,0.06) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(45,212,191,0.05) 0%,transparent 60%);pointer-events:none;z-index:0}
 .grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(56,189,248,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.03) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0}
 .container{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:28px 24px 60px}
- 
+
 /* HEADER */
 header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;gap:20px;flex-wrap:wrap}
 .brand-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:6px}
@@ -33,21 +33,21 @@ h1 span{color:var(--accent)}
 .ring-bg{fill:none;stroke:rgba(255,255,255,0.06);stroke-width:3}
 .ring-prog{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset 1s linear}
 .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),transparent);margin-bottom:24px;opacity:.35}
- 
+
 /* VIEW TOGGLE */
 .view-toggle{display:flex;align-items:center;gap:10px;margin-bottom:24px;flex-wrap:wrap}
 .view-btn{background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.15);color:var(--dim);font-family:'Rajdhani',sans-serif;font-weight:600;font-size:14px;letter-spacing:.05em;padding:10px 22px;border-radius:10px;cursor:pointer;transition:all .2s}
 .view-btn:hover{background:rgba(56,189,248,0.12);border-color:var(--accent);color:var(--accent)}
 .view-btn.active{background:rgba(56,189,248,0.18);border-color:var(--accent);color:#fff}
 .view-sep{width:1px;height:24px;background:rgba(255,255,255,0.1)}
- 
+
 /* MONTH TABS */
 .month-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px}
 .month-tab{background:rgba(56,189,248,0.04);border:1px solid rgba(56,189,248,0.12);color:var(--muted);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;padding:7px 14px;border-radius:8px;cursor:pointer;transition:all .2s;text-transform:uppercase}
 .month-tab:hover{background:rgba(56,189,248,0.1);border-color:var(--accent);color:var(--accent)}
 .month-tab.active{background:rgba(56,189,248,0.2);border-color:var(--accent);color:#fff;font-weight:700}
 .month-tab.disabled{opacity:.3;cursor:not-allowed;pointer-events:none}
- 
+
 /* KPI */
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:24px}
 .kpi-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
@@ -69,7 +69,7 @@ h1 span{color:var(--accent)}
 .kpi-sub{font-size:12px;color:var(--dim);margin-top:8px}
 .trend-up{color:var(--teal)}
 .trend-down{color:var(--rose)}
- 
+
 /* CHARTS */
 .main-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:18px}
 .bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
@@ -81,7 +81,7 @@ h1 span{color:var(--accent)}
 .legend{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .legend-item{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--dim);font-family:'Space Mono',monospace}
 .legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
- 
+
 /* COMPARISON CARDS */
 .comp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px}
 @media(max-width:700px){.comp-grid{grid-template-columns:1fr}}
@@ -93,7 +93,7 @@ h1 span{color:var(--accent)}
 .comp-diff.up{background:rgba(45,212,191,0.1);color:var(--teal)}
 .comp-diff.down{background:rgba(251,113,133,0.1);color:var(--rose)}
 .comp-diff.same{background:rgba(148,163,184,0.1);color:var(--dim)}
- 
+
 /* TABLE */
 .table-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;overflow:hidden;margin-bottom:18px}
 table{width:100%;border-collapse:collapse;font-size:13px}
@@ -108,7 +108,7 @@ tbody td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
 .total-hl{color:var(--accent)!important;font-weight:700!important}
 tfoot td{padding:10px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;color:var(--accent);border-top:1px solid rgba(56,189,248,.2)}
 tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;font-size:12px}
- 
+
 /* PROGRESS */
 .prog-section{display:flex;flex-direction:column;gap:12px}
 .prog-row{display:flex;align-items:center;gap:10px}
@@ -116,12 +116,12 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
 .prog-track{flex:1;height:7px;background:rgba(255,255,255,.06);border-radius:100px;overflow:hidden}
 .prog-bar{height:100%;border-radius:100px;transition:width 1s cubic-bezier(.34,1.56,.64,1)}
 .prog-val{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);width:70px;text-align:right;flex-shrink:0}
- 
+
 /* FOOTER */
 .dash-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06)}
 .dash-footer span{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.06em}
 .dash-footer .logo-text{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;color:var(--dim);letter-spacing:.1em}
- 
+
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .kpi-card{animation:fadeUp .5s ease both}
@@ -136,7 +136,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
 #loadingMsg{text-align:center;padding:60px 20px;font-family:'Space Mono',monospace;font-size:13px;color:var(--dim)}
 .spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(56,189,248,.2);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px}
 @keyframes spin{to{transform:rotate(360deg)}}
- 
+
 /* ── LOGIN ── */
 #loginOverlay{
   position:fixed;inset:0;z-index:9999;
@@ -213,7 +213,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
 </head>
 <body>
 <div class="grid-bg"></div>
- 
+
 <!-- ══ TOP NAV ══ -->
 <nav class="top-nav">
   <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:16px;letter-spacing:.1em;color:#fff;margin-right:16px;flex-shrink:0">CROWN<span style="color:var(--accent)">.</span></div>
@@ -241,7 +241,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     </div>
   </div>
 </nav>
- 
+
 <!-- ══ LOGIN ══ -->
 <div id="loginOverlay">
   <div class="login-box">
@@ -262,7 +262,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
   </div>
 </div>
 <div class="container">
- 
+
 <!-- HEADER -->
 <div id="moduleAgua">
 <header>
@@ -272,7 +272,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     <div class="header-meta" id="headerMeta">RESUMEN MENSUAL · CONECTANDO...</div>
   </div>
   <div class="header-right">
- 
+
     <div class="countdown-wrap">
       <svg class="ring-svg" width="30" height="30" viewBox="0 0 30 30">
         <circle class="ring-bg" cx="15" cy="15" r="12"/>
@@ -283,23 +283,23 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     <button class="logout-btn" onclick="doLogout()">⏻ Cerrar sesión</button>
   </div>
 </header>
- 
+
 <div class="divider"></div>
- 
+
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
   <button class="view-btn active" id="btnGeneral" onclick="setView('general')">📊 Vista General</button>
   <div class="view-sep"></div>
   <button class="view-btn" id="btnMes" onclick="setView('mes')">📅 Vista por Mes</button>
 </div>
- 
+
 <!-- MONTH TABS (solo visible en vista mes) -->
 <div id="monthTabsWrap" style="display:none">
   <div class="month-tabs" id="monthTabs"></div>
 </div>
- 
+
 <div id="loadingMsg"><span class="spinner"></span>Cargando datos desde Google Sheets...</div>
- 
+
 <!-- ══ VISTA GENERAL ══ -->
 <div id="viewGeneral" style="display:none">
   <div class="kpi-grid">
@@ -348,7 +348,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     </div>
   </div>
 </div>
- 
+
 <!-- ══ VISTA POR MES ══ -->
 <div id="viewMes" style="display:none">
   <!-- KPIs del mes -->
@@ -359,7 +359,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     <div class="kpi-card c-amber"><div class="kpi-label">Lavadora 3</div><div class="kpi-value" id="mkv3">—</div><div class="kpi-unit">m³</div><div class="kpi-sub" id="mks3">—</div></div>
     <div class="kpi-card c-rose"><div class="kpi-label">Mayor Consumo</div><div class="kpi-value" id="mkv4">—</div><div class="kpi-unit" id="mku4">del mes</div><div class="kpi-sub" id="mks4">—</div></div>
   </div>
- 
+
   <!-- Comparación con mes anterior -->
   <div class="chart-card" style="margin-bottom:18px">
     <div class="chart-card-header">
@@ -367,7 +367,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     </div>
     <div class="comp-grid" id="compGrid"></div>
   </div>
- 
+
   <!-- Gráfica del mes -->
   <div class="main-grid">
     <div class="chart-card">
@@ -379,18 +379,18 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
       <canvas id="mesDonutChart" height="220"></canvas>
     </div>
   </div>
- 
+
   <!-- Contexto: posición del mes vs el año -->
   <div class="chart-card" style="margin-bottom:18px">
     <div class="chart-card-header"><div><div class="chart-title" id="ctxTitle">Posición en el año</div><div class="chart-subtitle">mes seleccionado vs todos los meses</div></div></div>
     <canvas id="ctxChart" height="180"></canvas>
   </div>
 </div>
- 
+
 <!-- FOOTER -->
 </div><!-- /moduleAgua -->
- 
- 
+
+
 <!-- ══ MÓDULO PTAR ══ -->
 <div id="modulePtar" style="display:none">
   <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;gap:20px;flex-wrap:wrap">
@@ -411,9 +411,9 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
       <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)" id="ptarUpdate">Datos locales</div>
     </div>
   </div>
- 
+
   <div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--teal),var(--accent),transparent);margin-bottom:24px;opacity:.35"></div>
- 
+
   <!-- KPIs PTAR -->
   <div class="kpi-grid" style="margin-bottom:24px">
     <div class="kpi-card c-teal"><div class="kpi-label">Muestras Jun 2026</div><div class="kpi-value" id="pkv0" style="color:var(--teal)">8</div><div class="kpi-unit">registros analizados</div><div class="kpi-sub">PTAR Planta Toluca</div></div>
@@ -422,7 +422,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     <div class="kpi-card c-amber"><div class="kpi-label">Eficiencia Prom.</div><div class="kpi-value" id="pkv3">63.9</div><div class="kpi-unit">% remoción DQO</div><div class="kpi-sub" id="pks3">Meta: ≥ 70%</div></div>
     <div class="kpi-card c-rose"><div class="kpi-label">Mejor Eficiencia</div><div class="kpi-value" id="pkv4">76.6</div><div class="kpi-unit">% muestra #4</div><div class="kpi-sub">05/Jun · Entrada 8,500</div></div>
   </div>
- 
+
   <!-- Gráficas PTAR -->
   <div class="main-grid">
     <div class="chart-card">
@@ -440,7 +440,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
       <canvas id="ptarEficChart" height="240"></canvas>
     </div>
   </div>
- 
+
   <div class="bottom-grid">
     <div class="chart-card">
       <div class="chart-card-header"><div><div class="chart-title">Distribución DQO Entrada</div><div class="chart-subtitle">mg/L · rango de valores</div></div></div>
@@ -451,7 +451,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
       <canvas id="ptarDonutChart" height="200"></canvas>
     </div>
   </div>
- 
+
   <!-- Carta de control -->
   <div class="chart-card" style="margin-bottom:18px">
     <div class="chart-card-header">
@@ -459,7 +459,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     </div>
     <canvas id="ptarControlChart" height="180"></canvas>
   </div>
- 
+
   <!-- Tabla PTAR -->
   <div class="table-card">
     <div class="chart-card-header" style="margin-bottom:14px">
@@ -482,7 +482,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
       </table>
     </div>
   </div>
- 
+
   <!-- Footer -->
   <div class="dash-footer">
     <span class="logo-text">CROWN HOLDINGS</span>
@@ -495,15 +495,15 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     </span>
   </div>
 </div>
- 
- 
+
+
 </div><!-- /container -->
- 
+
 <script>
 // ─── CREDENTIALS ─────────────────────────────────────────
 const VALID_USER = 'Crown';
 const VALID_PASS = 'Toluca2026';
- 
+
 function doLogin(){
   const u=document.getElementById('loginUser').value.trim();
   const p=document.getElementById('loginPass').value;
@@ -518,16 +518,16 @@ function doLogin(){
     document.getElementById('loginPass').focus();
   }
 }
- 
+
 function doLogout(){
   sessionStorage.removeItem('crownAuth');
   document.getElementById('loginOverlay').style.display='flex';
   document.getElementById('loginUser').value='';
   document.getElementById('loginPass').value='';
 }
- 
+
 // ─── CONFIG ───────────────────────────────────────────────
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQF1jbEVS5FYm6VcYT11L0CpmAOY5Xebgwss5wnqB9hl9yYRUIyjkSMFsQFj6VARRRTiCrrA17MUC-D/pub?gid=400456709&single=true&output=csv';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSZhEWpaP0tJI3QrYR1Q5zpPOkkKCzpKkQYFccWJrfoa11NVCQTMkm0wGmPbYydeg/pub?gid=503055261&single=true&output=csv';
 const PTAR_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQyz44g-fTdosxCAOEylWb09o2Lx_K6Qf6jcxZ34vBRwT5Qw4uuoVQjcSVBbLam-9K4VzVb70shKQz0/pub?gid=2051090695&single=true&output=csv';
 const FALLBACK = [
   {mes:'Enero',  lav1:2451.0, lav2:2850.9, lav3:2484.35,total:7786.24},
@@ -535,11 +535,12 @@ const FALLBACK = [
   {mes:'Marzo',  lav1:2466.5, lav2:3469.0, lav3:2274.00,total:8209.50},
   {mes:'Abril',  lav1:2237.5, lav2:3627.0, lav3:2781.86,total:8646.36},
   {mes:'Mayo',   lav1:2397.0, lav2:3716.0, lav3:2899.35,total:9012.35},
+  {mes:'Junio',  lav1:2298.0, lav2:3857.0, lav3:2558.25,total:8713.25},
 ];
 const INTERVAL_SEC = 5;
 const CIRC = 2*Math.PI*12;
 const MESES_ES = ['','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
- 
+
 // ─── STATE ────────────────────────────────────────────────
 let allData = [];
 let currentView = 'general';
@@ -549,7 +550,7 @@ let countdown = INTERVAL_SEC;
 let countdownId = null;
 let charts = {};
 let PTAR_LIVE = null;
- 
+
 // ─── INIT ─────────────────────────────────────────────────
 Chart.defaults.color='#64748b';
 Chart.defaults.font.family="'DM Sans',sans-serif";
@@ -557,7 +558,7 @@ Chart.defaults.plugins.tooltip.backgroundColor='#0a0f1e';
 Chart.defaults.plugins.tooltip.borderColor='rgba(56,189,248,0.3)';
 Chart.defaults.plugins.tooltip.borderWidth=1;
 Chart.defaults.plugins.tooltip.padding=12;
- 
+
 window.addEventListener('DOMContentLoaded',()=>{
   // Verificar sesión
   if(sessionStorage.getItem('crownAuth')==='1'){
@@ -566,7 +567,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   renderDashboard(FALLBACK);
   startLive();
 });
- 
+
 // ─── LIVE LOOP ────────────────────────────────────────────
 function startLive(){
   fetchData();
@@ -580,19 +581,19 @@ function startLive(){
     if(countdown<=0){countdown=INTERVAL_SEC;fetchData();fetchPtarData();}
   },1000);
 }
- 
+
 function updateRing(sec){
   const pct=sec/INTERVAL_SEC;
   document.getElementById('ringProg').style.strokeDashoffset=CIRC*(1-pct);
   document.getElementById('lastUpdate').textContent=paused?'Pausado':`↻ en ${sec}s`;
 }
- 
+
 function togglePause(){
   paused=!paused;
   document.getElementById('liveDot').classList.toggle('paused',paused);
   document.getElementById('liveTxt').textContent=paused?'PAUSADO':'EN VIVO';
 }
- 
+
 async function fetchData(){
   if(paused)return;
   try{
@@ -612,7 +613,7 @@ async function fetchData(){
   renderDashboard(FALLBACK);
   document.getElementById('lastUpdate').textContent='📋 Datos locales';
 }
- 
+
 async function fetchPtarData(){
   try{
     const res=await fetch(PTAR_URL+'&_t='+Date.now(),{mode:'cors',signal:AbortSignal.timeout(8000)});
@@ -631,7 +632,7 @@ async function fetchPtarData(){
   }catch(e){}
   document.getElementById('ptarUpdate').textContent='📋 Datos locales';
 }
- 
+
 function parsePtar(rows){
   let hi=-1;
   for(let i=0;i<rows.length;i++){
@@ -657,7 +658,7 @@ function parsePtar(rows){
   }
   return data.length?data:null;
 }
- 
+
 // ─── PARSER ───────────────────────────────────────────────
 function parseResumen(rows){
   let hi=-1;
@@ -688,7 +689,7 @@ function parseResumen(rows){
 }
 function cap(s){return s.charAt(0)+s.slice(1).toLowerCase();}
 function fmt(n){return Number(n).toLocaleString('es-MX',{maximumFractionDigits:1});}
- 
+
 // ─── RENDER ───────────────────────────────────────────────
 function renderDashboard(data){
   allData=data;
@@ -702,7 +703,7 @@ function renderDashboard(data){
   const labels=data.map(d=>d.mes);
   document.getElementById('headerMeta').textContent=`RESUMEN MENSUAL · ${labels[0].toUpperCase()}–${labels[labels.length-1].toUpperCase()} 2026`;
 }
- 
+
 // ─── VIEW TOGGLE ──────────────────────────────────────────
 function setView(v){
   currentView=v;
@@ -716,7 +717,7 @@ function setView(v){
     renderMes(allData,selectedMes);
   }
 }
- 
+
 // ─── MONTH TABS ───────────────────────────────────────────
 function buildMonthTabs(data){
   const wrap=document.getElementById('monthTabs');
@@ -729,13 +730,13 @@ function buildMonthTabs(data){
     wrap.appendChild(btn);
   });
 }
- 
+
 function selectMes(i){
   selectedMes=i;
   document.querySelectorAll('.month-tab').forEach((b,idx)=>b.classList.toggle('active',idx===i));
   renderMes(allData,i);
 }
- 
+
 // ─── GENERAL VIEW ─────────────────────────────────────────
 function renderGeneral(data){
   const lav1=data.map(d=>d.lav1),lav2=data.map(d=>d.lav2),lav3=data.map(d=>d.lav3),tots=data.map(d=>d.total);
@@ -743,7 +744,7 @@ function renderGeneral(data){
   const pi=tots.indexOf(Math.max(...tots));
   const lavT=[tl1,tl2,tl3],bigI=lavT.indexOf(Math.max(...lavT));
   const labels=data.map(d=>d.mes);
- 
+
   document.getElementById('gkv0').textContent=fmt(gt);
   document.getElementById('gks0').textContent=`${data.length} meses registrados`;
   document.getElementById('gkv1').textContent=fmt(gt/data.length);
@@ -756,12 +757,12 @@ function renderGeneral(data){
   document.getElementById('gks3').textContent=`${((lavT[bigI]/gt)*100).toFixed(1)}% del total`;
   document.getElementById('gkv4').textContent=data.length;
   document.getElementById('gks4').textContent='meses con datos registrados';
- 
+
   updateBarChart(labels,lav1,lav2,lav3);
   updateDonut([tl1,tl2,tl3],gt);
   updateLine(labels,tots);
   updateHBar(['Lavadora 1','Lavadora 2','Lavadora 3'],lavT,gt);
- 
+
   const pg=document.getElementById('progSection');
   pg.innerHTML='';
   const cols=['var(--lav1)','var(--lav2)','var(--lav3)'];
@@ -769,7 +770,7 @@ function renderGeneral(data){
     const pct=(v/gt*100).toFixed(1);
     pg.innerHTML+=`<div class="prog-row"><div class="prog-label" style="color:${cols[i]}">Lav. ${i+1}</div><div class="prog-track"><div class="prog-bar" style="background:${cols[i]};width:${pct}%"></div></div><div class="prog-val">${fmt(v)} m³</div></div>`;
   });
- 
+
   const tb=document.getElementById('tableBody');
   tb.innerHTML='';
   data.forEach(d=>{
@@ -780,7 +781,7 @@ function renderGeneral(data){
   document.getElementById('tf3').textContent=fmt(tl3);
   document.getElementById('tf4').textContent=fmt(gt);
 }
- 
+
 // ─── MES VIEW ─────────────────────────────────────────────
 function renderMes(data,idx){
   const d=data[idx];
@@ -790,7 +791,7 @@ function renderMes(data,idx){
   const bigLav=lavs.indexOf(Math.max(...lavs));
   const lavNames=['Lavadora 1','Lavadora 2','Lavadora 3'];
   const cols=['var(--lav1)','var(--lav2)','var(--lav3)'];
- 
+
   // KPIs
   document.getElementById('mkv0').textContent=fmt(d.total);
   document.getElementById('mks0').textContent=`${((d.total/gt)*100).toFixed(1)}% del total anual`;
@@ -803,7 +804,7 @@ function renderMes(data,idx){
   document.getElementById('mkv4').textContent=`LAV ${bigLav+1}`;
   document.getElementById('mku4').textContent=fmt(lavs[bigLav])+' m³';
   document.getElementById('mks4').textContent=`mayor consumo del mes`;
- 
+
   // Comparación
   document.getElementById('compTitle').textContent=prev?`${d.mes} vs ${prev.mes}`:d.mes+' — Sin mes anterior';
   const cg=document.getElementById('compGrid');
@@ -823,24 +824,24 @@ function renderMes(data,idx){
         ${diffHtml}
       </div>`;
   });
- 
+
   // Gráfica barra del mes
   document.getElementById('mesBarTitle').textContent='Desglose · '+d.mes;
   updateMesBar(lavNames,lavs);
- 
+
   // Donut del mes
   updateMesDonut(lavs,d.total);
- 
+
   // Contexto en el año
   document.getElementById('ctxTitle').textContent=d.mes+' en contexto del año';
   updateCtxChart(data,idx);
 }
- 
+
 // ─── CHART HELPERS ────────────────────────────────────────
 function mkTooltip(){
   return{callbacks:{label:ctx=>` ${ctx.dataset.label||''}: ${fmt(ctx.parsed.y??ctx.parsed)} m³`}};
 }
- 
+
 function updateBarChart(labels,l1,l2,l3){
   if(charts.bar){charts.bar.data.labels=labels;charts.bar.data.datasets[0].data=l1;charts.bar.data.datasets[1].data=l2;charts.bar.data.datasets[2].data=l3;charts.bar.update('active');return;}
   charts.bar=new Chart(document.getElementById('barChart'),{
@@ -854,7 +855,7 @@ function updateBarChart(labels,l1,l2,l3){
             y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',callback:v=>fmt(v)+' m³'}}}}
   });
 }
- 
+
 function updateDonut(lavT,gt){
   if(charts.donut){charts.donut.data.datasets[0].data=lavT;charts.donut.update('active');return;}
   charts.donut=new Chart(document.getElementById('donutChart'),{
@@ -866,7 +867,7 @@ function updateDonut(lavT,gt){
       tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${fmt(ctx.parsed)} m³ (${(ctx.parsed/gt*100).toFixed(1)}%)`}}}}
   });
 }
- 
+
 function updateLine(labels,tots){
   if(charts.line){charts.line.data.labels=labels;charts.line.data.datasets[0].data=tots;charts.line.update('active');return;}
   charts.line=new Chart(document.getElementById('lineChart'),{
@@ -878,7 +879,7 @@ function updateLine(labels,tots){
             y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',callback:v=>fmt(v)+' m³'}}}}
   });
 }
- 
+
 function updateHBar(labels,values,gt){
   if(charts.hbar){charts.hbar.data.datasets[0].data=values;charts.hbar.update('active');return;}
   charts.hbar=new Chart(document.getElementById('hbarChart'),{
@@ -890,7 +891,7 @@ function updateHBar(labels,values,gt){
             y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Rajdhani',sans-serif",size:14,weight:'600'},color:'#94a3b8'}}}}
   });
 }
- 
+
 function updateMesBar(labels,values){
   if(charts.mesBar){charts.mesBar.data.datasets[0].data=values;charts.mesBar.update('active');return;}
   charts.mesBar=new Chart(document.getElementById('mesBarChart'),{
@@ -902,7 +903,7 @@ function updateMesBar(labels,values){
             y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',callback:v=>fmt(v)+' m³'}}}}
   });
 }
- 
+
 function updateMesDonut(values,total){
   if(charts.mesDonut){charts.mesDonut.data.datasets[0].data=values;charts.mesDonut.update('active');return;}
   charts.mesDonut=new Chart(document.getElementById('mesDonutChart'),{
@@ -914,7 +915,7 @@ function updateMesDonut(values,total){
       tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${fmt(ctx.parsed)} m³ (${(ctx.parsed/total*100).toFixed(1)}%)`}}}}
   });
 }
- 
+
 function updateCtxChart(data,selIdx){
   const labels=data.map(d=>d.mes);
   const tots=data.map(d=>d.total);
@@ -934,7 +935,7 @@ function updateCtxChart(data,selIdx){
             y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',callback:v=>fmt(v)+' m³'}}}}
   });
 }
- 
+
 // ─── PTAR DATA ────────────────────────────────────────────
 const PTAR_DATA = [
   {n:1,fecha:"02/06",entrada:7070,salida:4230,eficiencia:40.2,rango:"MEDIO"},
@@ -946,7 +947,7 @@ const PTAR_DATA = [
   {n:7,fecha:"06/06",entrada:8300,salida:2000,eficiencia:75.9,rango:"ULTRA ALTO"},
   {n:8,fecha:"09/06",entrada:7280,salida:3490,eficiencia:52.1,rango:"MEDIO"},
 ];
- 
+
 // ─── MODULE SWITCH ────────────────────────────────────────
 function switchModule(mod){
   document.getElementById('moduleAgua').style.display = mod==='agua'?'block':'none';
@@ -974,7 +975,7 @@ function switchModule(mod){
   }
   if(mod==='ptar' && !charts.ptarLine) renderPtar();
 }
- 
+
 // ─── RENDER PTAR ─────────────────────────────────────────
 function renderPtar(){
   const d = PTAR_LIVE || PTAR_DATA;
@@ -982,13 +983,13 @@ function renderPtar(){
   const entradas = d.map(r=>r.entrada);
   const salidas  = d.map(r=>r.salida);
   const efics    = d.map(r=>r.eficiencia);
- 
+
   const avgE = entradas.reduce((a,b)=>a+b,0)/d.length;
   const avgS = salidas.reduce((a,b)=>a+b,0)/d.length;
   const avgEf= efics.reduce((a,b)=>a+b,0)/d.length;
   const maxEf= Math.max(...efics);
   const bestIdx = efics.indexOf(maxEf);
- 
+
   document.getElementById('pkv1').textContent = fmt(avgE);
   document.getElementById('pkv2').textContent = fmt(avgS);
   document.getElementById('pkv3').textContent = avgEf.toFixed(1);
@@ -996,7 +997,7 @@ function renderPtar(){
   document.getElementById('pks1').textContent = `Rango: ${Math.min(...entradas).toLocaleString()}–${Math.max(...entradas).toLocaleString()}`;
   document.getElementById('pks2').textContent = `Rango: ${Math.min(...salidas).toLocaleString()}–${Math.max(...salidas).toLocaleString()}`;
   document.getElementById('pks3').textContent = `Meta: ≥ 70% · ${d.filter(r=>r.eficiencia>=70).length}/${d.length} muestras OK`;
- 
+
   // Line chart DQO
   charts.ptarLine = new Chart(document.getElementById('ptarLineChart'),{
     type:'line',
@@ -1012,7 +1013,7 @@ function renderPtar(){
       }
     }
   });
- 
+
   // Eficiencia bar
   const eficColors = efics.map(e=>e>=70?'rgba(45,212,191,0.8)':e>=60?'rgba(251,191,36,0.8)':'rgba(251,113,133,0.8)');
   charts.ptarEfic = new Chart(document.getElementById('ptarEficChart'),{
@@ -1028,7 +1029,7 @@ function renderPtar(){
       }
     }
   });
- 
+
   // Barras DQO entrada
   charts.ptarBar = new Chart(document.getElementById('ptarBarChart'),{
     type:'bar',
@@ -1041,7 +1042,7 @@ function renderPtar(){
       }
     }
   });
- 
+
   // Donut rangos
   const medio = d.filter(r=>r.rango==='MEDIO').length;
   const ultraAlto = d.filter(r=>r.rango==='ULTRA ALTO').length;
@@ -1054,7 +1055,7 @@ function renderPtar(){
       }
     }
   });
- 
+
   // Carta de control eficiencia
   const mean = avgEf;
   const std = Math.sqrt(efics.map(e=>Math.pow(e-mean,2)).reduce((a,b)=>a+b,0)/efics.length);
@@ -1077,7 +1078,7 @@ function renderPtar(){
       }
     }
   });
- 
+
   // Tabla
   const tb = document.getElementById('ptarTableBody');
   tb.innerHTML='';
@@ -1100,8 +1101,7 @@ function renderPtar(){
   document.getElementById('ptf2').textContent = fmt(avgS)+' mg/L';
   document.getElementById('ptf3').textContent = avgEf.toFixed(1)+'%';
 }
- 
+
 </script>
 </body>
 </html>
- 

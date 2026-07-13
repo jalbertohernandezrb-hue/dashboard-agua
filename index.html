@@ -393,6 +393,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
 
 <!-- ══ MÓDULO PTAR ══ -->
 <div id="modulePtar" style="display:none">
+  <!-- Header PTAR -->
   <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;gap:20px;flex-wrap:wrap">
     <div>
       <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--teal);text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:6px">
@@ -402,32 +403,37 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
       <h1 style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.05;color:#fff">
         Control DQO <span style="color:var(--teal)">PTAR</span>
       </h1>
-      <div style="font-size:12px;color:var(--muted);font-family:'Space Mono',monospace;margin-top:4px" id="ptarMeta">JUNIO 2026 · 8 MUESTRAS</div>
+      <div style="font-size:12px;color:var(--muted);font-family:'Space Mono',monospace;margin-top:4px" id="ptarMeta">JUN–JUL 2026 · 49 MUESTRAS</div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
-      <div style="background:rgba(45,212,191,0.08);border:1px solid rgba(45,212,191,0.25);border-radius:100px;padding:7px 16px;font-size:11px;font-family:'Space Mono',monospace;color:var(--teal);letter-spacing:.08em">
-        ● PTAR TOLUCA
-      </div>
+      <div style="background:rgba(45,212,191,0.08);border:1px solid rgba(45,212,191,0.25);border-radius:100px;padding:7px 16px;font-size:11px;font-family:'Space Mono',monospace;color:var(--teal);letter-spacing:.08em">● PTAR TOLUCA</div>
       <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)" id="ptarUpdate">Datos locales</div>
     </div>
   </div>
-
   <div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--teal),var(--accent),transparent);margin-bottom:24px;opacity:.35"></div>
+
+  <!-- MES TABS -->
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:24px;flex-wrap:wrap">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-right:4px">MES:</div>
+    <div id="ptarMonthTabs" style="display:flex;gap:6px;flex-wrap:wrap">
+      <!-- tabs injected by JS -->
+    </div>
+  </div>
 
   <!-- KPIs PTAR -->
   <div class="kpi-grid" style="margin-bottom:24px">
-    <div class="kpi-card c-teal"><div class="kpi-label">Muestras Jun 2026</div><div class="kpi-value" id="pkv0" style="color:var(--teal)">8</div><div class="kpi-unit">registros analizados</div><div class="kpi-sub">PTAR Planta Toluca</div></div>
-    <div class="kpi-card c-accent"><div class="kpi-label">DQO Entrada Prom.</div><div class="kpi-value" id="pkv1">7,586</div><div class="kpi-unit">mg/L promedio</div><div class="kpi-sub" id="pks1">Rango: 6,700–8,500</div></div>
-    <div class="kpi-card c-violet"><div class="kpi-label">DQO Salida Prom.</div><div class="kpi-value" id="pkv2">2,691</div><div class="kpi-unit">mg/L promedio</div><div class="kpi-sub" id="pks2">Rango: 1,990–4,230</div></div>
-    <div class="kpi-card c-amber"><div class="kpi-label">Eficiencia Prom.</div><div class="kpi-value" id="pkv3">63.9</div><div class="kpi-unit">% remoción DQO</div><div class="kpi-sub" id="pks3">Meta: ≥ 70%</div></div>
-    <div class="kpi-card c-rose"><div class="kpi-label">Mejor Eficiencia</div><div class="kpi-value" id="pkv4">76.6</div><div class="kpi-unit">% muestra #4</div><div class="kpi-sub">05/Jun · Entrada 8,500</div></div>
+    <div class="kpi-card c-teal"><div class="kpi-label">Muestras del Mes</div><div class="kpi-value" id="pkv0" style="color:var(--teal)">—</div><div class="kpi-unit">registros analizados</div><div class="kpi-sub" id="pks0">—</div></div>
+    <div class="kpi-card c-accent"><div class="kpi-label">DQO Entrada Prom.</div><div class="kpi-value" id="pkv1">—</div><div class="kpi-unit">mg/L promedio</div><div class="kpi-sub" id="pks1">—</div></div>
+    <div class="kpi-card c-violet"><div class="kpi-label">DQO Salida Prom.</div><div class="kpi-value" id="pkv2">—</div><div class="kpi-unit">mg/L promedio</div><div class="kpi-sub" id="pks2">—</div></div>
+    <div class="kpi-card c-amber"><div class="kpi-label">Eficiencia Prom.</div><div class="kpi-value" id="pkv3">—</div><div class="kpi-unit">% remoción DQO</div><div class="kpi-sub" id="pks3">Meta: ≥ 70%</div></div>
+    <div class="kpi-card c-rose"><div class="kpi-label">Mejor Eficiencia</div><div class="kpi-value" id="pkv4">—</div><div class="kpi-unit">% del mes</div><div class="kpi-sub" id="pks4">—</div></div>
   </div>
 
-  <!-- Gráficas PTAR -->
+  <!-- CHARTS ROW 1 -->
   <div class="main-grid">
     <div class="chart-card">
       <div class="chart-card-header">
-        <div><div class="chart-title">DQO Entrada vs Salida</div><div class="chart-subtitle">mg/L por muestra · Junio 2026</div></div>
+        <div><div class="chart-title">DQO Entrada vs Salida</div><div class="chart-subtitle" id="ptarLineTitle">mg/L por muestra</div></div>
         <div class="legend">
           <div class="legend-item"><div class="legend-dot" style="background:#38bdf8"></div>Entrada</div>
           <div class="legend-item"><div class="legend-dot" style="background:#2dd4bf"></div>Salida</div>
@@ -441,18 +447,19 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     </div>
   </div>
 
+  <!-- CHARTS ROW 2 -->
   <div class="bottom-grid">
     <div class="chart-card">
-      <div class="chart-card-header"><div><div class="chart-title">Distribución DQO Entrada</div><div class="chart-subtitle">mg/L · rango de valores</div></div></div>
+      <div class="chart-card-header"><div><div class="chart-title">DQO Entrada por Muestra</div><div class="chart-subtitle">mg/L · valores registrados</div></div></div>
       <canvas id="ptarBarChart" height="200"></canvas>
     </div>
     <div class="chart-card">
-      <div class="chart-card-header"><div><div class="chart-title">Rangos de DQO</div><div class="chart-subtitle">Clasificación por nivel</div></div></div>
+      <div class="chart-card-header"><div><div class="chart-title">Distribución por Rango DQO</div><div class="chart-subtitle">Clasificación de muestras del mes</div></div></div>
       <canvas id="ptarDonutChart" height="200"></canvas>
     </div>
   </div>
 
-  <!-- Carta de control -->
+  <!-- CARTA DE CONTROL -->
   <div class="chart-card" style="margin-bottom:18px">
     <div class="chart-card-header">
       <div><div class="chart-title">Carta de Control — Eficiencia (%)</div><div class="chart-subtitle">Límites de control ±3σ · NOM-001-SEMARNAT-2021</div></div>
@@ -460,10 +467,10 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     <canvas id="ptarControlChart" height="180"></canvas>
   </div>
 
-  <!-- Tabla PTAR -->
+  <!-- TABLA -->
   <div class="table-card">
     <div class="chart-card-header" style="margin-bottom:14px">
-      <div><div class="chart-title">Registro de Muestras PTAR</div><div class="chart-subtitle">Control DQO · Junio 2026</div></div>
+      <div><div class="chart-title" id="ptarTableTitle">Registro de Muestras PTAR</div><div class="chart-subtitle">Control DQO</div></div>
     </div>
     <div style="overflow-x:auto">
       <table>
@@ -473,7 +480,7 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
         </tr></thead>
         <tbody id="ptarTableBody"></tbody>
         <tfoot><tr>
-          <td colspan="2">PROMEDIO</td>
+          <td colspan="2">PROMEDIO DEL MES</td>
           <td id="ptf1" style="text-align:right;font-family:'Space Mono',monospace;font-size:12px">—</td>
           <td id="ptf2" style="text-align:right;font-family:'Space Mono',monospace;font-size:12px">—</td>
           <td id="ptf3" style="text-align:right;font-family:'Space Mono',monospace;font-size:12px">—</td>
@@ -483,16 +490,11 @@ tfoot td:not(:first-child){text-align:right;font-family:'Space Mono',monospace;f
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer PTAR -->
   <div class="dash-footer">
     <span class="logo-text">CROWN HOLDINGS</span>
-    <span>PTAR · PLANTA TOLUCA · JUNIO 2026</span>
+    <span>PTAR · PLANTA TOLUCA · 2026</span>
     <span>Control_Muestras_PTAR.xlsx</span>
-    <span style="font-family:'DM Sans',sans-serif;font-size:11px;color:var(--dim);text-align:right;line-height:1.5">
-      Elaborado por:<br>
-      <strong style="color:var(--text)">José Alberto Hernández Robles</strong><br>
-      <span style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:var(--muted)">PRACTICANTE · PROCESOS QUÍMICOS</span>
-    </span>
   </div>
 </div>
 
@@ -938,14 +940,55 @@ function updateCtxChart(data,selIdx){
 
 // ─── PTAR DATA ────────────────────────────────────────────
 const PTAR_DATA = [
-  {n:1,fecha:"02/06",entrada:7070,salida:4230,eficiencia:40.2,rango:"MEDIO"},
-  {n:2,fecha:"03/06",entrada:8500,salida:2800,eficiencia:67.1,rango:"ULTRA ALTO"},
-  {n:3,fecha:"04/06",entrada:7300,salida:2000,eficiencia:72.6,rango:"ULTRA ALTO"},
-  {n:4,fecha:"05/06",entrada:8500,salida:1990,eficiencia:76.6,rango:"MEDIO"},
-  {n:5,fecha:"05/06",entrada:6700,salida:2000,eficiencia:70.1,rango:"ULTRA ALTO"},
-  {n:6,fecha:"06/06",entrada:7040,salida:3020,eficiencia:57.1,rango:"MEDIO"},
-  {n:7,fecha:"06/06",entrada:8300,salida:2000,eficiencia:75.9,rango:"ULTRA ALTO"},
-  {n:8,fecha:"09/06",entrada:7280,salida:3490,eficiencia:52.1,rango:"MEDIO"},
+  {n:1,fecha:"01/06/2026",label:"01/06",mes:"06/2026",entrada:7070,salida:4230,eficiencia:40.2,rango:"MEDIO"},
+  {n:2,fecha:"02/06/2026",label:"02/06",mes:"06/2026",entrada:8500,salida:2800,eficiencia:67.1,rango:"ULTRA ALTO"},
+  {n:3,fecha:"03/06/2026",label:"03/06",mes:"06/2026",entrada:7300,salida:2000,eficiencia:72.6,rango:"ULTRA ALTO"},
+  {n:4,fecha:"04/06/2026",label:"04/06",mes:"06/2026",entrada:8500,salida:1990,eficiencia:76.6,rango:"MEDIO"},
+  {n:5,fecha:"04/06/2026",label:"04/06",mes:"06/2026",entrada:6700,salida:2000,eficiencia:70.1,rango:"ULTRA ALTO"},
+  {n:6,fecha:"05/06/2026",label:"05/06",mes:"06/2026",entrada:7040,salida:3020,eficiencia:57.1,rango:"MEDIO"},
+  {n:7,fecha:"05/06/2026",label:"05/06",mes:"06/2026",entrada:8300,salida:2000,eficiencia:75.9,rango:"ULTRA ALTO"},
+  {n:8,fecha:"08/06/2026",label:"08/06",mes:"06/2026",entrada:7280,salida:3490,eficiencia:52.1,rango:"MEDIO"},
+  {n:9,fecha:"09/06/2026",label:"09/06",mes:"06/2026",entrada:6610,salida:4560,eficiencia:31.0,rango:"MEDIO"},
+  {n:10,fecha:"10/06/2026",label:"10/06",mes:"06/2026",entrada:8150,salida:3890,eficiencia:52.3,rango:"MEDIO"},
+  {n:11,fecha:"10/06/2026",label:"10/06",mes:"06/2026",entrada:2270,salida:1190,eficiencia:47.6,rango:"ULTRA ALTO"},
+  {n:12,fecha:"11/06/2026",label:"11/06",mes:"06/2026",entrada:6190,salida:2710,eficiencia:56.2,rango:"MEDIO"},
+  {n:13,fecha:"11/06/2026",label:"11/06",mes:"06/2026",entrada:8100,salida:4100,eficiencia:49.4,rango:"ULTRA ALTO"},
+  {n:14,fecha:"12/06/2026",label:"12/06",mes:"06/2026",entrada:5140,salida:2460,eficiencia:52.1,rango:"MEDIO"},
+  {n:15,fecha:"12/06/2026",label:"12/06",mes:"06/2026",entrada:7400,salida:3800,eficiencia:48.6,rango:"MEDIO"},
+  {n:16,fecha:"15/06/2026",label:"15/06",mes:"06/2026",entrada:4270,salida:2570,eficiencia:39.8,rango:"MEDIO"},
+  {n:17,fecha:"16/06/2026",label:"16/06",mes:"06/2026",entrada:5400,salida:3100,eficiencia:42.6,rango:"MEDIO"},
+  {n:18,fecha:"16/06/2026",label:"16/06",mes:"06/2026",entrada:9410,salida:6290,eficiencia:33.2,rango:"MEDIO"},
+  {n:19,fecha:"17/06/2026",label:"17/06",mes:"06/2026",entrada:11030,salida:1960,eficiencia:82.2,rango:"MEDIO"},
+  {n:20,fecha:"17/06/2026",label:"17/06",mes:"06/2026",entrada:3950,salida:2830,eficiencia:28.4,rango:"MEDIO"},
+  {n:21,fecha:"18/06/2026",label:"18/06",mes:"06/2026",entrada:4710,salida:1860,eficiencia:60.5,rango:"ALTO"},
+  {n:22,fecha:"19/06/2026",label:"19/06",mes:"06/2026",entrada:6417,salida:4634,eficiencia:27.8,rango:"ALTO"},
+  {n:23,fecha:"19/06/2026",label:"19/06",mes:"06/2026",entrada:4495,salida:2027,eficiencia:54.9,rango:"ALTO"},
+  {n:24,fecha:"22/06/2026",label:"22/06",mes:"06/2026",entrada:7167,salida:2246,eficiencia:68.7,rango:"ALTO"},
+  {n:25,fecha:"22/06/2026",label:"22/06",mes:"06/2026",entrada:6514,salida:2319,eficiencia:64.4,rango:"ALTO"},
+  {n:26,fecha:"23/06/2026",label:"23/06",mes:"06/2026",entrada:6503,salida:3679,eficiencia:43.4,rango:"ALTO"},
+  {n:27,fecha:"23/06/2026",label:"23/06",mes:"06/2026",entrada:6352,salida:1599,eficiencia:74.8,rango:"ALTO"},
+  {n:28,fecha:"24/06/2026",label:"24/06",mes:"06/2026",entrada:11625,salida:1117,eficiencia:90.4,rango:"ALTO"},
+  {n:29,fecha:"24/06/2026",label:"24/06",mes:"06/2026",entrada:8297,salida:2556,eficiencia:69.2,rango:"ALTO"},
+  {n:30,fecha:"25/06/2026",label:"25/06",mes:"06/2026",entrada:7372,salida:1927,eficiencia:73.9,rango:"ALTO"},
+  {n:31,fecha:"25/06/2026",label:"25/06",mes:"06/2026",entrada:2715,salida:303,eficiencia:88.8,rango:"ALTO"},
+  {n:32,fecha:"26/06/2026",label:"26/06",mes:"06/2026",entrada:6112,salida:1597,eficiencia:73.9,rango:"ALTO"},
+  {n:33,fecha:"29/06/2026",label:"29/06",mes:"06/2026",entrada:6476,salida:2262,eficiencia:65.1,rango:"ALTO"},
+  {n:34,fecha:"29/06/2026",label:"29/06",mes:"06/2026",entrada:6927,salida:3026,eficiencia:56.3,rango:"ALTO"},
+  {n:35,fecha:"30/06/2026",label:"30/06",mes:"06/2026",entrada:6232,salida:2431,eficiencia:61.0,rango:"ALTO"},
+  {n:36,fecha:"01/07/2026",label:"01/07",mes:"07/2026",entrada:9240,salida:9101,eficiencia:1.5,rango:"ALTO"},
+  {n:37,fecha:"02/07/2026",label:"02/07",mes:"07/2026",entrada:8415,salida:3915,eficiencia:53.5,rango:"ALTO"},
+  {n:38,fecha:"02/07/2026",label:"02/07",mes:"07/2026",entrada:4600,salida:2806,eficiencia:39.0,rango:"ALTO"},
+  {n:39,fecha:"03/07/2026",label:"03/07",mes:"07/2026",entrada:7185,salida:2295,eficiencia:68.1,rango:"ALTO"},
+  {n:40,fecha:"03/07/2026",label:"03/07",mes:"07/2026",entrada:6920,salida:2531,eficiencia:63.4,rango:"ALTO"},
+  {n:41,fecha:"06/07/2026",label:"06/07",mes:"07/2026",entrada:7887,salida:2046,eficiencia:74.1,rango:"ALTO"},
+  {n:42,fecha:"06/07/2026",label:"06/07",mes:"07/2026",entrada:6514,salida:1526,eficiencia:76.6,rango:"ALTO"},
+  {n:43,fecha:"07/07/2026",label:"07/07",mes:"07/2026",entrada:6480,salida:2128,eficiencia:67.2,rango:"ALTO"},
+  {n:44,fecha:"08/07/2026",label:"08/07",mes:"07/2026",entrada:10478,salida:1672,eficiencia:84.0,rango:"ALTO"},
+  {n:45,fecha:"08/07/2026",label:"08/07",mes:"07/2026",entrada:2933,salida:1245,eficiencia:57.6,rango:"ALTO"},
+  {n:46,fecha:"09/07/2026",label:"09/07",mes:"07/2026",entrada:10076,salida:2422,eficiencia:76.0,rango:"ALTO"},
+  {n:47,fecha:"09/07/2026",label:"09/07",mes:"07/2026",entrada:4019,salida:1240,eficiencia:69.1,rango:"ALTO"},
+  {n:48,fecha:"10/07/2026",label:"10/07",mes:"07/2026",entrada:5407,salida:1751,eficiencia:67.6,rango:"ALTO"},
+  {n:49,fecha:"10/07/2026",label:"10/07",mes:"07/2026",entrada:8943,salida:1927,eficiencia:78.5,rango:"ALTO"},
 ];
 
 // ─── MODULE SWITCH ────────────────────────────────────────
@@ -955,153 +998,137 @@ function switchModule(mod){
   const agua = document.getElementById('nav-agua');
   const ptar = document.getElementById('nav-ptar');
   if(mod==='agua'){
-    agua.style.color='#fff';
-    agua.style.background='#0f1d3a';
-    agua.style.border='1px solid rgba(56,189,248,0.5)';
-    agua.style.boxShadow='0 0 0 1px rgba(56,189,248,0.15),0 4px 12px rgba(0,0,0,0.3)';
-    ptar.style.color='rgba(255,255,255,0.45)';
-    ptar.style.background='transparent';
-    ptar.style.border='1px solid transparent';
-    ptar.style.boxShadow='none';
+    agua.style.color='#fff';agua.style.background='#0f1d3a';agua.style.border='1px solid rgba(56,189,248,0.5)';agua.style.boxShadow='0 0 0 1px rgba(56,189,248,0.15),0 4px 12px rgba(0,0,0,0.3)';
+    ptar.style.color='rgba(255,255,255,0.45)';ptar.style.background='transparent';ptar.style.border='1px solid transparent';ptar.style.boxShadow='none';
   } else {
-    ptar.style.color='#fff';
-    ptar.style.background='#0f1d3a';
-    ptar.style.border='1px solid rgba(56,189,248,0.5)';
-    ptar.style.boxShadow='0 0 0 1px rgba(56,189,248,0.15),0 4px 12px rgba(0,0,0,0.3)';
-    agua.style.color='rgba(255,255,255,0.45)';
-    agua.style.background='transparent';
-    agua.style.border='1px solid transparent';
-    agua.style.boxShadow='none';
+    ptar.style.color='#fff';ptar.style.background='#0f1d3a';ptar.style.border='1px solid rgba(45,212,191,0.5)';ptar.style.boxShadow='0 0 0 1px rgba(45,212,191,0.15),0 4px 12px rgba(0,0,0,0.3)';
+    agua.style.color='rgba(255,255,255,0.45)';agua.style.background='transparent';agua.style.border='1px solid transparent';agua.style.boxShadow='none';
+    if(!ptarMesActivo) initPtar();
   }
-  if(mod==='ptar' && !charts.ptarLine) renderPtar();
 }
 
-// ─── RENDER PTAR ─────────────────────────────────────────
-function renderPtar(){
-  const d = PTAR_LIVE || PTAR_DATA;
-  const labels = d.map(r=>'#'+r.n+' '+r.fecha);
+let ptarMesActivo = null;
+
+function initPtar(){
+  const meses = [...new Set(PTAR_DATA.map(r=>r.mes))].sort();
+  const NOMBRES = {'06/2026':'Junio','07/2026':'Julio','08/2026':'Agosto','09/2026':'Septiembre','10/2026':'Octubre','11/2026':'Noviembre','12/2026':'Diciembre'};
+  const tabsWrap = document.getElementById('ptarMonthTabs');
+  tabsWrap.innerHTML = '';
+  const allBtn = document.createElement('div');
+  allBtn.id = 'ptarTab-all';
+  allBtn.textContent = 'TODOS';
+  styleTabBtn(allBtn, false);
+  allBtn.onclick = () => selectPtarMes('all');
+  tabsWrap.appendChild(allBtn);
+  meses.forEach(m => {
+    const btn = document.createElement('div');
+    btn.id = 'ptarTab-' + m.replace('/','_');
+    btn.textContent = (NOMBRES[m]||m).toUpperCase();
+    styleTabBtn(btn, false);
+    btn.onclick = () => selectPtarMes(m);
+    tabsWrap.appendChild(btn);
+  });
+  selectPtarMes(meses[meses.length-1]);
+}
+
+function styleTabBtn(btn, active){
+  if(active){
+    btn.style.cssText='padding:9px 20px;font-family:"Rajdhani",sans-serif;font-weight:700;font-size:14px;cursor:pointer;border-radius:10px;transition:all .2s;white-space:nowrap;color:#fff;background:#0b2030;border:1px solid rgba(45,212,191,0.5);box-shadow:0 0 0 1px rgba(45,212,191,0.15),0 4px 12px rgba(0,0,0,0.3);';
+  } else {
+    btn.style.cssText='padding:9px 20px;font-family:"Rajdhani",sans-serif;font-weight:700;font-size:14px;cursor:pointer;border-radius:10px;transition:all .2s;white-space:nowrap;color:rgba(255,255,255,0.45);background:transparent;border:1px solid rgba(255,255,255,0.08);';
+  }
+}
+
+function selectPtarMes(mes){
+  ptarMesActivo = mes;
+  const meses = [...new Set(PTAR_DATA.map(r=>r.mes))].sort();
+  const NOMBRES = {'06/2026':'Junio 2026','07/2026':'Julio 2026','08/2026':'Agosto 2026'};
+  ['all',...meses.map(m=>m.replace('/','_'))].forEach(id=>{
+    const el = document.getElementById('ptarTab-'+id);
+    if(!el) return;
+    const isActive = (id==='all'&&mes==='all')||(id===mes.replace('/','_'));
+    styleTabBtn(el, isActive);
+  });
+  const d = mes==='all' ? PTAR_DATA : PTAR_DATA.filter(r=>r.mes===mes);
+  const mesNombre = mes==='all'?'Todos los meses':(NOMBRES[mes]||mes);
+  document.getElementById('ptarMeta').textContent = mesNombre.toUpperCase()+' · '+d.length+' MUESTRAS';
+  if(document.getElementById('ptarTableTitle')) document.getElementById('ptarTableTitle').textContent = 'Registro · '+mesNombre;
+  if(document.getElementById('ptarLineTitle')) document.getElementById('ptarLineTitle').textContent = 'mg/L por muestra · '+mesNombre;
+  renderPtar(d);
+}
+
+function renderPtar(d){
+  if(!d||d.length===0) return;
+  const labels = d.map(r=>'#'+r.n+' '+r.label);
   const entradas = d.map(r=>r.entrada);
   const salidas  = d.map(r=>r.salida);
   const efics    = d.map(r=>r.eficiencia);
-
   const avgE = entradas.reduce((a,b)=>a+b,0)/d.length;
   const avgS = salidas.reduce((a,b)=>a+b,0)/d.length;
   const avgEf= efics.reduce((a,b)=>a+b,0)/d.length;
   const maxEf= Math.max(...efics);
   const bestIdx = efics.indexOf(maxEf);
-
-  document.getElementById('pkv1').textContent = fmt(avgE);
-  document.getElementById('pkv2').textContent = fmt(avgS);
-  document.getElementById('pkv3').textContent = avgEf.toFixed(1);
-  document.getElementById('pkv4').textContent = maxEf.toFixed(1);
-  document.getElementById('pks1').textContent = `Rango: ${Math.min(...entradas).toLocaleString()}–${Math.max(...entradas).toLocaleString()}`;
-  document.getElementById('pks2').textContent = `Rango: ${Math.min(...salidas).toLocaleString()}–${Math.max(...salidas).toLocaleString()}`;
-  document.getElementById('pks3').textContent = `Meta: ≥ 70% · ${d.filter(r=>r.eficiencia>=70).length}/${d.length} muestras OK`;
-
-  // Line chart DQO
-  charts.ptarLine = new Chart(document.getElementById('ptarLineChart'),{
-    type:'line',
-    data:{labels,datasets:[
-      {label:'DQO Entrada',data:entradas,borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',borderWidth:2.5,pointBackgroundColor:'#38bdf8',pointBorderColor:'#0a0f1e',pointBorderWidth:2,pointRadius:6,fill:true,tension:0.3},
-      {label:'DQO Salida', data:salidas, borderColor:'#2dd4bf',backgroundColor:'rgba(45,212,191,0.1)',borderWidth:2.5,pointBackgroundColor:'#2dd4bf',pointBorderColor:'#0a0f1e',pointBorderWidth:2,pointRadius:6,fill:true,tension:0.3},
-    ]},
-    options:{responsive:true,interaction:{mode:'index',intersect:false},
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.dataset.label}: ${fmt(ctx.parsed.y)} mg/L`}}},
-      scales:{
-        x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#94a3b8'}},
-        y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',callback:v=>v.toLocaleString()+' mg/L'}}
-      }
-    }
-  });
-
-  // Eficiencia bar
-  const eficColors = efics.map(e=>e>=70?'rgba(45,212,191,0.8)':e>=60?'rgba(251,191,36,0.8)':'rgba(251,113,133,0.8)');
-  charts.ptarEfic = new Chart(document.getElementById('ptarEficChart'),{
-    type:'bar',
-    data:{labels,datasets:[{label:'Eficiencia',data:efics,backgroundColor:eficColors,borderColor:efics.map(e=>e>=70?'#2dd4bf':e>=60?'#fbbf24':'#fb7185'),borderWidth:1.5,borderRadius:6,borderSkipped:false}]},
-    options:{responsive:true,
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` Eficiencia: ${ctx.parsed.y.toFixed(1)}%`}},
-        annotation:{annotations:{line70:{type:'line',yMin:70,yMax:70,borderColor:'rgba(45,212,191,0.6)',borderWidth:2,borderDash:[6,4],label:{display:true,content:'Meta 70%',position:'end',font:{size:10},color:'#2dd4bf',backgroundColor:'transparent'}}}}
-      },
-      scales:{
-        x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#94a3b8'}},
-        y:{grid:{color:'rgba(56,189,248,0.07)'},min:0,max:100,ticks:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',callback:v=>v+'%'}}
-      }
-    }
-  });
-
-  // Barras DQO entrada
-  charts.ptarBar = new Chart(document.getElementById('ptarBarChart'),{
-    type:'bar',
-    data:{labels,datasets:[{label:'DQO Entrada',data:entradas,backgroundColor:'rgba(56,189,248,0.7)',borderColor:'#38bdf8',borderWidth:1.5,borderRadius:5,borderSkipped:false}]},
-    options:{responsive:true,
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` Entrada: ${fmt(ctx.parsed.y)} mg/L`}}},
-      scales:{
-        x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#94a3b8'}},
-        y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',callback:v=>v.toLocaleString()}}
-      }
-    }
-  });
-
-  // Donut rangos
-  const medio = d.filter(r=>r.rango==='MEDIO').length;
-  const ultraAlto = d.filter(r=>r.rango==='ULTRA ALTO').length;
-  charts.ptarDonut = new Chart(document.getElementById('ptarDonutChart'),{
-    type:'doughnut',
-    data:{labels:['DQO Rango Medio','DQO Ultra Alto'],datasets:[{data:[medio,ultraAlto],backgroundColor:['rgba(251,191,36,0.8)','rgba(251,113,133,0.8)'],borderColor:['#fbbf24','#fb7185'],borderWidth:2,hoverOffset:8}]},
-    options:{responsive:true,cutout:'65%',
-      plugins:{legend:{display:true,position:'bottom',labels:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',padding:14,usePointStyle:true}},
-        tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.parsed} muestras (${(ctx.parsed/d.length*100).toFixed(0)}%)`}}
-      }
-    }
-  });
-
-  // Carta de control eficiencia
-  const mean = avgEf;
-  const std = Math.sqrt(efics.map(e=>Math.pow(e-mean,2)).reduce((a,b)=>a+b,0)/efics.length);
-  const lcs = mean + 3*std, lci = Math.max(0, mean - 3*std);
-  charts.ptarCtrl = new Chart(document.getElementById('ptarControlChart'),{
-    type:'line',
-    data:{labels,datasets:[
-      {label:'Eficiencia',data:efics,borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',borderWidth:2,pointBackgroundColor:efics.map(e=>e<lci||e>lcs?'#fb7185':'#38bdf8'),pointBorderColor:'#0a0f1e',pointBorderWidth:2,pointRadius:7,fill:true,tension:0.3,order:1},
-      {label:'LC (Media)',data:Array(d.length).fill(Math.round(mean*10)/10),borderColor:'#2dd4bf',borderWidth:2,borderDash:[],pointRadius:0,fill:false,order:2},
-      {label:'LCS',data:Array(d.length).fill(Math.round(lcs*10)/10),borderColor:'rgba(251,191,36,0.7)',borderWidth:1.5,borderDash:[6,4],pointRadius:0,fill:false,order:3},
-      {label:'LCI',data:Array(d.length).fill(Math.round(lci*10)/10),borderColor:'rgba(251,113,133,0.7)',borderWidth:1.5,borderDash:[6,4],pointRadius:0,fill:false,order:4},
-    ]},
-    options:{responsive:true,interaction:{mode:'index',intersect:false},
-      plugins:{legend:{display:true,position:'bottom',labels:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',padding:14,usePointStyle:true}},
-        tooltip:{callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`}}
-      },
-      scales:{
-        x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#94a3b8'}},
-        y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',callback:v=>v+'%'}}
-      }
-    }
-  });
-
+  document.getElementById('pkv0').textContent=d.length;
+  document.getElementById('pks0').textContent=d.length+' registros';
+  document.getElementById('pkv1').textContent=fmt(avgE);
+  document.getElementById('pkv2').textContent=fmt(avgS);
+  document.getElementById('pkv3').textContent=avgEf.toFixed(1);
+  document.getElementById('pkv4').textContent=maxEf.toFixed(1);
+  document.getElementById('pks1').textContent='Rango: '+Math.min(...entradas).toLocaleString()+'–'+Math.max(...entradas).toLocaleString();
+  document.getElementById('pks2').textContent='Rango: '+Math.min(...salidas).toLocaleString()+'–'+Math.max(...salidas).toLocaleString();
+  document.getElementById('pks3').textContent='Meta ≥70% · '+d.filter(r=>r.eficiencia>=70).length+'/'+d.length+' OK';
+  document.getElementById('pks4').textContent='Muestra #'+d[bestIdx].n+' · '+d[bestIdx].fecha;
+  const eficColors=efics.map(e=>e>=70?'rgba(45,212,191,0.8)':e>=60?'rgba(251,191,36,0.8)':'rgba(251,113,133,0.8)');
+  // Line
+  if(charts.ptarLine){charts.ptarLine.data.labels=labels;charts.ptarLine.data.datasets[0].data=entradas;charts.ptarLine.data.datasets[1].data=salidas;charts.ptarLine.update('active');}
+  else charts.ptarLine=new Chart(document.getElementById('ptarLineChart'),{type:'line',data:{labels,datasets:[
+    {label:'DQO Entrada',data:entradas,borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',borderWidth:2.5,pointBackgroundColor:'#38bdf8',pointBorderColor:'#0a0f1e',pointBorderWidth:2,pointRadius:5,fill:true,tension:0.3},
+    {label:'DQO Salida',data:salidas,borderColor:'#2dd4bf',backgroundColor:'rgba(45,212,191,0.1)',borderWidth:2.5,pointBackgroundColor:'#2dd4bf',pointBorderColor:'#0a0f1e',pointBorderWidth:2,pointRadius:5,fill:true,tension:0.3}]},
+    options:{responsive:true,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.dataset.label}: ${fmt(ctx.parsed.y)} mg/L`}}},
+    scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#94a3b8',maxRotation:45}},y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#64748b',callback:v=>v.toLocaleString()+' mg/L'}}}}});
+  // Efic
+  if(charts.ptarEfic){charts.ptarEfic.data.labels=labels;charts.ptarEfic.data.datasets[0].data=efics;charts.ptarEfic.data.datasets[0].backgroundColor=eficColors;charts.ptarEfic.update('active');}
+  else charts.ptarEfic=new Chart(document.getElementById('ptarEficChart'),{type:'bar',data:{labels,datasets:[{label:'Eficiencia',data:efics,backgroundColor:eficColors,borderColor:efics.map(e=>e>=70?'#2dd4bf':e>=60?'#fbbf24':'#fb7185'),borderWidth:1.5,borderRadius:6,borderSkipped:false}]},
+    options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${ctx.parsed.y.toFixed(1)}%`}}},
+    scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#94a3b8',maxRotation:45}},y:{grid:{color:'rgba(56,189,248,0.07)'},min:0,max:100,ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#64748b',callback:v=>v+'%'}}}}});
+  // Bar entrada
+  if(charts.ptarBar){charts.ptarBar.data.labels=labels;charts.ptarBar.data.datasets[0].data=entradas;charts.ptarBar.update('active');}
+  else charts.ptarBar=new Chart(document.getElementById('ptarBarChart'),{type:'bar',data:{labels,datasets:[{label:'DQO Entrada',data:entradas,backgroundColor:'rgba(56,189,248,0.7)',borderColor:'#38bdf8',borderWidth:1.5,borderRadius:5,borderSkipped:false}]},
+    options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>` ${fmt(ctx.parsed.y)} mg/L`}}},
+    scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#94a3b8',maxRotation:45}},y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#64748b',callback:v=>v.toLocaleString()}}}}});
+  // Donut
+  const rangos={};d.forEach(r=>{const k=r.rango||'OTRO';rangos[k]=(rangos[k]||0)+1;});
+  const rL=Object.keys(rangos),rV=Object.values(rangos);
+  const rC=['rgba(251,191,36,0.8)','rgba(251,113,133,0.8)','rgba(56,189,248,0.8)','rgba(167,139,250,0.8)','rgba(74,222,128,0.8)'];
+  const rB=['#fbbf24','#fb7185','#38bdf8','#a78bfa','#4ade80'];
+  if(charts.ptarDonut){charts.ptarDonut.data.labels=rL;charts.ptarDonut.data.datasets[0].data=rV;charts.ptarDonut.data.datasets[0].backgroundColor=rC.slice(0,rL.length);charts.ptarDonut.data.datasets[0].borderColor=rB.slice(0,rL.length);charts.ptarDonut.update('active');}
+  else charts.ptarDonut=new Chart(document.getElementById('ptarDonutChart'),{type:'doughnut',data:{labels:rL,datasets:[{data:rV,backgroundColor:rC.slice(0,rL.length),borderColor:rB.slice(0,rL.length),borderWidth:2,hoverOffset:8}]},
+    options:{responsive:true,cutout:'65%',plugins:{legend:{display:true,position:'bottom',labels:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',padding:12,usePointStyle:true}},
+    tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.parsed} (${(ctx.parsed/d.length*100).toFixed(0)}%)`}}}}});
+  // Carta control
+  const mean=avgEf,std=Math.sqrt(efics.map(e=>Math.pow(e-mean,2)).reduce((a,b)=>a+b,0)/efics.length);
+  const lcs=mean+3*std,lci=Math.max(0,mean-3*std);
+  if(charts.ptarCtrl){charts.ptarCtrl.data.labels=labels;charts.ptarCtrl.data.datasets[0].data=efics;charts.ptarCtrl.data.datasets[0].pointBackgroundColor=efics.map(e=>e<lci||e>lcs?'#fb7185':'#38bdf8');charts.ptarCtrl.data.datasets[1].data=Array(d.length).fill(+mean.toFixed(1));charts.ptarCtrl.data.datasets[2].data=Array(d.length).fill(+lcs.toFixed(1));charts.ptarCtrl.data.datasets[3].data=Array(d.length).fill(+lci.toFixed(1));charts.ptarCtrl.update('active');}
+  else charts.ptarCtrl=new Chart(document.getElementById('ptarControlChart'),{type:'line',data:{labels,datasets:[
+    {label:'Eficiencia',data:efics,borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.08)',borderWidth:2,pointBackgroundColor:efics.map(e=>e<lci||e>lcs?'#fb7185':'#38bdf8'),pointBorderColor:'#0a0f1e',pointBorderWidth:2,pointRadius:6,fill:true,tension:0.3,order:1},
+    {label:'LC Media',data:Array(d.length).fill(+mean.toFixed(1)),borderColor:'#2dd4bf',borderWidth:2,pointRadius:0,fill:false,order:2},
+    {label:'LCS',data:Array(d.length).fill(+lcs.toFixed(1)),borderColor:'rgba(251,191,36,0.8)',borderWidth:1.5,borderDash:[6,4],pointRadius:0,fill:false,order:3},
+    {label:'LCI',data:Array(d.length).fill(+lci.toFixed(1)),borderColor:'rgba(251,113,133,0.8)',borderWidth:1.5,borderDash:[6,4],pointRadius:0,fill:false,order:4}]},
+    options:{responsive:true,interaction:{mode:'index',intersect:false},plugins:{legend:{display:true,position:'bottom',labels:{font:{family:"'Space Mono',monospace",size:10},color:'#64748b',padding:14,usePointStyle:true}},tooltip:{callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`}}},
+    scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#94a3b8',maxRotation:45}},y:{grid:{color:'rgba(56,189,248,0.07)'},ticks:{font:{family:"'Space Mono',monospace",size:9},color:'#64748b',callback:v=>v+'%'}}}}});
   // Tabla
-  const tb = document.getElementById('ptarTableBody');
+  const tb=document.getElementById('ptarTableBody');
   tb.innerHTML='';
   d.forEach(r=>{
-    const ok = r.eficiencia>=70;
-    const badge = ok
-      ? '<span style="background:rgba(45,212,191,0.15);color:#2dd4bf;border:1px solid rgba(45,212,191,0.3);border-radius:6px;padding:2px 8px;font-size:10px;font-family:monospace">✓ OK</span>'
-      : '<span style="background:rgba(251,113,133,0.15);color:#fb7185;border:1px solid rgba(251,113,133,0.3);border-radius:6px;padding:2px 8px;font-size:10px;font-family:monospace">⚠ Revisar</span>';
-    tb.innerHTML+=`<tr>
-      <td style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:15px">${r.n}</td>
-      <td>${r.fecha}/2026</td>
-      <td style="text-align:right;font-family:monospace;font-size:12px;color:#38bdf8">${r.entrada.toLocaleString()}</td>
-      <td style="text-align:right;font-family:monospace;font-size:12px;color:#2dd4bf">${r.salida.toLocaleString()}</td>
-      <td style="text-align:right;font-family:monospace;font-size:12px;color:${ok?'#2dd4bf':r.eficiencia>=60?'#fbbf24':'#fb7185'}">${r.eficiencia.toFixed(1)}%</td>
-      <td style="font-size:12px;color:var(--dim)">${r.rango}</td>
-      <td>${badge}</td>
-    </tr>`;
+    const ok=r.eficiencia>=70,mid=r.eficiencia>=60;
+    const color=ok?'#2dd4bf':mid?'#fbbf24':'#fb7185';
+    const badge=ok?'<span style="background:rgba(45,212,191,0.15);color:#2dd4bf;border:1px solid rgba(45,212,191,0.3);border-radius:6px;padding:2px 8px;font-size:10px;font-family:monospace">✓ OK</span>':'<span style="background:rgba(251,113,133,0.15);color:#fb7185;border:1px solid rgba(251,113,133,0.3);border-radius:6px;padding:2px 8px;font-size:10px;font-family:monospace">⚠ Revisar</span>';
+    tb.innerHTML+=`<tr><td style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:15px">${r.n}</td><td style="font-family:'Space Mono',monospace;font-size:11px">${r.fecha}</td><td style="text-align:right;font-family:'Space Mono',monospace;font-size:12px;color:#38bdf8">${r.entrada.toLocaleString()}</td><td style="text-align:right;font-family:'Space Mono',monospace;font-size:12px;color:#2dd4bf">${r.salida.toLocaleString()}</td><td style="text-align:right;font-family:'Space Mono',monospace;font-size:12px;color:${color}">${r.eficiencia.toFixed(1)}%</td><td style="font-size:12px;color:var(--dim)">${r.rango}</td><td>${badge}</td></tr>`;
   });
-  document.getElementById('ptf1').textContent = fmt(avgE)+' mg/L';
-  document.getElementById('ptf2').textContent = fmt(avgS)+' mg/L';
-  document.getElementById('ptf3').textContent = avgEf.toFixed(1)+'%';
+  document.getElementById('ptf1').textContent=fmt(avgE)+' mg/L';
+  document.getElementById('ptf2').textContent=fmt(avgS)+' mg/L';
+  document.getElementById('ptf3').textContent=avgEf.toFixed(1)+'%';
 }
 
 </script>
 </body>
-</html>
